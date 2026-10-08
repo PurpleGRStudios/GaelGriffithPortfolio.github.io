@@ -2,9 +2,9 @@ import Footer from '../components/Footer.jsx'
 import { ArrowIcon } from '../components/Icons.jsx'
 import ProjectTabs from '../components/ProjectTabs.jsx'
 import Slider from '../components/Slider.jsx'
-import { featured } from '../data/projects.js'
+import { asset, featured } from '../data/projects.js'
 
-const CV_URL = encodeURI('/pdf/Gael Griffith CV.pdf')
+const CV_URL = encodeURI(asset('pdf/Gael Griffith CV.pdf'))
 
 export default function Home() {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -65,7 +65,7 @@ export default function Home() {
             </p>
           </div>
           <div className="about-photo">
-            <img src="/img/17939550062067686.jpg" alt="Gael Griffith" />
+            <img src={asset('img/17939550062067686.jpg')}alt="Gael Griffith" />
           </div>
         </div>
       </section>

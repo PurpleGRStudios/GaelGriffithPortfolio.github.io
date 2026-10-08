@@ -1,4 +1,6 @@
-const img = (path) => `/img/${path}`
+export const asset = (path) => `${import.meta.env.BASE_URL}${path}`
+
+const img = (path) => asset(`img/${path}`)
 
 const PLACEHOLDER_BODY = [
   { type: 'heading', text: 'Details coming soon' },
