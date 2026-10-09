@@ -6,7 +6,8 @@ import StatusBar from './components/StatusBar.jsx'
 import Home from './pages/Home.jsx'
 import ProjectPage from './pages/ProjectPage.jsx'
 
-const SECTIONS = ['services', 'toolkit', 'about', 'contact']
+// Order doesn't matter: the active section is whichever one started closest above the line
+const SECTIONS = ['services', 'about', 'toolkit', 'contact']
 
 // Highlights the nav item for the section currently in view on the home page
 function useActiveSection(enabled) {
@@ -17,9 +18,13 @@ function useActiveSection(enabled) {
     const onScroll = () => {
       const line = window.innerHeight * 0.4
       let current = null
+      let closest = -Infinity
       for (const id of SECTIONS) {
-        const el = document.getElementById(id)
-        if (el && el.getBoundingClientRect().top <= line) current = id
+        const top = document.getElementById(id)?.getBoundingClientRect().top
+        if (top !== undefined && top <= line && top > closest) {
+          closest = top
+          current = id
+        }
       }
       setActive(current)
     }
