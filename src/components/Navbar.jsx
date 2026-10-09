@@ -8,6 +8,7 @@ const CV_URL = encodeURI(asset('pdf/Gael Griffith CV.pdf'))
 const items = [
   { label: 'HOME', section: null },
   { label: 'PROJECTS', section: 'services' },
+  { label: 'TOOLKIT', section: 'toolkit' },
   { label: 'ABOUT', section: 'about' },
   { label: 'CONTACT', section: 'contact' },
 ]
