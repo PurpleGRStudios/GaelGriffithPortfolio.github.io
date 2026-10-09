@@ -1,5 +1,6 @@
 ﻿import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { asset } from '../data/projects.js'
+import { useMusic } from '../music.js'
 import { useTheme } from '../theme.js'
 import ThemeTransition from './ThemeTransition.jsx'
 
@@ -18,6 +19,7 @@ export default function Navbar({ activeSection }) {
   const { pathname } = useLocation()
   const onHome = pathname === '/'
   const { theme, toggle: toggleTheme, transition } = useTheme()
+  const music = useMusic()
 
   const go = (section) => {
     const scroll = () =>
@@ -60,6 +62,22 @@ export default function Navbar({ activeSection }) {
           <span>GAEL_GRIFFITH</span>
         </div>
         <div className="avatar" aria-hidden="true">GG</div>
+        <button
+          className={music.on ? 'theme-toggle' : 'theme-toggle muted'}
+          onClick={music.toggle}
+          aria-label={music.on ? 'Mute music' : 'Play music'}
+          aria-pressed={music.on}
+          title={music.on ? 'Mute music' : 'Play music'}
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 10v4h3l4 3.5v-11L7 10H4Z" fill="currentColor" />
+            {music.on ? (
+              <path d="M15 8.5a5 5 0 0 1 0 7M17.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" strokeWidth="1.6" />
+            ) : (
+              <path d="M15 9.5l5 5M20 9.5l-5 5" stroke="currentColor" strokeWidth="1.8" />
+            )}
+          </svg>
+        </button>
         <button
           className="theme-toggle"
           onClick={toggleTheme}
