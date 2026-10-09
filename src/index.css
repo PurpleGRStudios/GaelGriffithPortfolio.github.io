@@ -601,3 +601,48 @@ img { max-width: 100%; display: block; }
 @keyframes tt-swing { from { transform: rotate(-55deg); } to { transform: rotate(50deg); } }
 @keyframes tt-swing-leg { from { transform: rotate(-42deg); } to { transform: rotate(46deg); } }
 @keyframes tt-bob { from { translate: 0 0; } to { translate: 0 -7px; } }
+
+
+/* ---------- Mobile polish ---------- */
+@media (max-width: 720px) {
+  html { scroll-padding-top: 130px; }
+
+  /* nav strip under the top bar: fit 5 items on a 320px screen */
+  .main-nav { justify-content: space-around; gap: 0; background: rgba(222,227,228,.97); }
+  .nav-item { padding: 4px 6px 0; font-size: 13px; letter-spacing: .08em; }
+
+  /* hero becomes a normal stacked flow so nothing overlaps at any text size */
+  .hero { min-height: 0; padding: 78px 0 36px; display: flex; flex-direction: column; gap: 34px; }
+  .hero-content { position: static; transform: none; width: auto; margin: 0 var(--pad-x); }
+  .hero h1 { font-size: clamp(56px, 18vw, 92px); }
+  .hero-description { width: 100%; font-size: 16px; margin-top: 26px; }
+  .hero-actions { margin-top: 24px; gap: 16px; }
+  .mission-card { position: relative; inset: auto; margin: 0 var(--pad-x); }
+  .side-index { display: flex; flex-direction: row; position: static; transform: none; justify-content: center; gap: 4px; margin-top: -14px; }
+  .side-index i { display: none; }
+  .side-index button { min-width: 44px; min-height: 44px; font-size: 14px; }
+
+  .section { padding-top: 56px; padding-bottom: 20px; }
+  .filter-bar { gap: 14px; overflow-x: auto; }
+  .run-grid { gap: 22px; }
+  .about-copy { padding: 20px 18px; }
+  .contact-link { width: 100%; min-width: 0; }
+
+  .project-page { padding-bottom: 40px; }
+  .project-layout { margin-top: 36px; }
+  .stat-panel { padding: 28px 24px; }
+  .project-main { overflow-wrap: anywhere; }
+  .project-main h2, .project-main h3 { font-size: 28px; margin-top: 36px; }
+
+  .to-top { bottom: 66px; width: 46px; height: 46px; }
+}
+
+@media (max-width: 480px) {
+  .avatar { display: none; }
+  .brand { font-size: 17px; gap: 9px; }
+  .topbar { padding: 0 14px; }
+  .main-nav { padding: 0 8px; }
+  .page-title { font-size: clamp(44px, 14vw, 64px); }
+}
+
+[data-theme="dark"] .main-nav { background: rgba(20,25,27,.97); border-bottom-color: rgba(255,255,255,.1); }
