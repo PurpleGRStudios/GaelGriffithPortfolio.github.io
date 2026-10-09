@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import CityBackground from './components/CityBackground.jsx'
 import Navbar from './components/Navbar.jsx'
@@ -6,7 +6,7 @@ import StatusBar from './components/StatusBar.jsx'
 import Home from './pages/Home.jsx'
 import ProjectPage from './pages/ProjectPage.jsx'
 
-const SECTIONS = ['services', 'about', 'contact']
+const SECTIONS = ['services', 'toolkit', 'about', 'contact']
 
 // Highlights the nav item for the section currently in view on the home page
 function useActiveSection(enabled) {

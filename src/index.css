@@ -646,3 +646,46 @@ img { max-width: 100%; display: block; }
 }
 
 [data-theme="dark"] .main-nav { background: rgba(20,25,27,.97); border-bottom-color: rgba(255,255,255,.1); }
+
+
+/* ---------- Toolkit ---------- */
+.tool-group { margin-bottom: 40px; }
+.tool-group-title {
+  display: flex; align-items: center; gap: 12px; margin: 0 0 18px;
+  font: 700 15px "Barlow Condensed"; letter-spacing: .2em; text-transform: uppercase; color: var(--muted);
+}
+.tool-group-title::after { content: ""; flex: 1; height: 1px; background: rgba(19,23,25,.18); }
+.tool-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+.tool {
+  position: relative; display: flex; align-items: center; gap: 16px; padding: 16px 20px;
+  background: #eceeef; border-left: 4px solid var(--red); box-shadow: 0 10px 28px rgba(28,35,38,.1);
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 94% 100%, 0 100%);
+  transition: transform .18s ease, background .18s;
+}
+.tool:hover { transform: translateX(5px); }
+.tool-badge {
+  flex: none; display: grid; place-items: center; min-width: 46px; height: 46px; padding: 0 8px;
+  color: white; background: var(--ink);
+  font: italic 800 18px "Barlow Condensed"; letter-spacing: .02em;
+  clip-path: polygon(18% 0, 100% 0, 82% 100%, 0 100%);
+}
+.tool-text { display: flex; flex-direction: column; min-width: 0; }
+.tool-text strong { font: 700 21px/1.05 "Barlow Condensed"; letter-spacing: .04em; text-transform: uppercase; }
+.tool-text small { margin-top: 4px; color: var(--muted); font-size: 13px; }
+.tool-level {
+  position: absolute; top: 8px; right: 12px; padding: 2px 8px;
+  color: white; background: var(--red); font: 700 10px "Barlow Condensed"; letter-spacing: .14em; text-transform: uppercase;
+  font-style: normal; transform: skewX(-18deg);
+}
+
+[data-theme="dark"] .tool { background: #1b2225; box-shadow: 0 10px 28px rgba(0,0,0,.4); }
+[data-theme="dark"] .tool-badge { background: #3a4348; }
+[data-theme="dark"] .tool-group-title::after { background: rgba(255,255,255,.16); }
+
+@media (max-width: 720px) {
+  /* six nav items: shrink a bit more and let the strip scroll as a last resort */
+  .main-nav { overflow-x: auto; justify-content: space-between; scrollbar-width: none; }
+  .main-nav::-webkit-scrollbar { display: none; }
+  .nav-item { flex: none; padding: 4px 5px 0; font-size: 12px; letter-spacing: .06em; }
+  .tool-grid { grid-template-columns: 1fr; gap: 12px; }
+}

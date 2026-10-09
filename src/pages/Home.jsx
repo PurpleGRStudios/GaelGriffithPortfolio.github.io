@@ -1,7 +1,8 @@
-import Footer from '../components/Footer.jsx'
+﻿import Footer from '../components/Footer.jsx'
 import { ArrowIcon } from '../components/Icons.jsx'
 import ProjectTabs from '../components/ProjectTabs.jsx'
 import Slider from '../components/Slider.jsx'
+import Toolkit from '../components/Toolkit.jsx'
 import { asset, featured } from '../data/projects.js'
 
 const CV_URL = encodeURI(asset('pdf/Gael Griffith CV.pdf'))
