@@ -690,3 +690,6 @@ img { max-width: 100%; display: block; }
   .nav-item { flex: none; padding: 4px 5px 0; font-size: 12px; letter-spacing: .06em; }
   .tool-grid { grid-template-columns: 1fr; gap: 12px; }
 }
+
+.theme-toggle.muted { opacity: .55; }
+.profile { gap: 8px; }
