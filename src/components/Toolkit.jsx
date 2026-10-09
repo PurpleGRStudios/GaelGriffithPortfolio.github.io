@@ -1,3 +1,4 @@
+import { asset } from '../data/projects.js'
 import { toolkit } from '../data/toolkit.js'
 
 export default function Toolkit() {
@@ -14,7 +15,9 @@ export default function Toolkit() {
           <ul className="tool-grid">
             {group.items.map((tool) => (
               <li className="tool" key={tool.name}>
-                <span className="tool-badge" aria-hidden="true">{tool.badge}</span>
+                <span className="tool-badge">
+                  <img src={asset(`icons/${tool.icon}.svg`)} alt="" width="30" height="30" loading="lazy" />
+                </span>
                 <span className="tool-text">
                   <strong>{tool.name}</strong>
                   <small>{tool.note}</small>
@@ -25,6 +28,8 @@ export default function Toolkit() {
           </ul>
         </div>
       ))}
+
+
     </section>
   )
 }
