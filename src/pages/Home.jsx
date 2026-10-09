@@ -5,7 +5,7 @@ import Slider from '../components/Slider.jsx'
 import Toolkit from '../components/Toolkit.jsx'
 import { asset, featured } from '../data/projects.js'
 
-const CV_URL = encodeURI(asset('pdf/Gael Griffith CV.pdf'))
+const CV_URL = encodeURI(asset('pdf/NewestCVgaelgriffith_EN.pdf'))
 
 export default function Home() {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -39,6 +39,8 @@ export default function Home() {
 
       <ProjectTabs />
 
+
+
       <section id="about" className="section">
         <div className="section-head">
           <div className="eyebrow"><span /> RUNNER PROFILE</div>
@@ -47,7 +49,7 @@ export default function Home() {
         <div className="about-grid">
           <div className="about-copy">
             <p>
-              I'm an 20-year-old aspiring Unity/Unreal developer from Amsterdam, The Netherlands.
+              I'm an 23-year-old aspiring Unity/Unreal developer from Amsterdam, The Netherlands.
               Living day to day with my mind always drifting off somewhere. My journey into the
               world of technology and software development began with a deep love for games and
               their impact on me as a child.
@@ -70,6 +72,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Toolkit />
 
       <Footer />
     </>

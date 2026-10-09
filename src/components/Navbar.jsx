@@ -3,13 +3,13 @@ import { asset } from '../data/projects.js'
 import { useTheme } from '../theme.js'
 import ThemeTransition from './ThemeTransition.jsx'
 
-const CV_URL = encodeURI(asset('pdf/Gael Griffith CV.pdf'))
+const CV_URL = encodeURI(asset('pdf/NewestCVgaelgriffith_EN.pdf'))
 
 const items = [
   { label: 'HOME', section: null },
   { label: 'PROJECTS', section: 'services' },
-  { label: 'TOOLKIT', section: 'toolkit' },
   { label: 'ABOUT', section: 'about' },
+  { label: 'TOOLKIT', section: 'toolkit' },
   { label: 'CONTACT', section: 'contact' },
 ]
 
